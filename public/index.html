@@ -1,0 +1,48 @@
+<?php
+   // echo "hola"
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/Device.css">
+</head>
+<body>
+    <div class="device">
+        <div class="mainConfigInput">
+            <h1>Configure your router from here: </h1>
+            <select name="image" id="configSelector" class="input" onchange="handleSelectChange(this)">
+                <option class = "configOption" value="">Change router name</option>
+                <option class = "configOption" value="sr">Show run</option>
+                <option class = "configOption" value="sr">IP int brief</option>
+                <option class = "configOption" value="sr">Change IP to interface</option>
+            </select>
+        </div>
+        <div class="deviceInfo">
+            <label for="">IP of your router</label>
+            <input id="ipInput" class="ipInput" type="text" placeholder = "187.243.245.254" value="187.243.245.254" disabled>
+            <label for="">Name it here</label>
+            <input id="nameInput" class="nameInput" type="text" placeholder = "Name_of_your_hardware" value>
+            <button onclick="processNameChange()"> Cambiar nombre </button>
+        </div>
+    </div>
+    <!-- -->
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+    <script src="ansible.js" ></script>
+    <script>
+        /**
+        *   Save the anme into an ansible file
+        * */
+        processNameChange = () => {
+            let ip = '187.243.245.254'
+            let name_input = document.getElementById('nameInput')
+            let name = name_input.value
+            console.log("Will name "+name, ip)
+            startChangingName( ip, name )
+        }
+    </script>
+</body>
+</html>

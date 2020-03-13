@@ -1,0 +1,48 @@
+@import '../css/variables';
+.device{
+    @include flexCenter( column );
+    justify-content: flex-start;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+    .mainConfigInput{
+        @include flexCenter( column );
+        height: auto;
+        min-height: 150px;
+        width: 90%;
+        // background-color: #C4D6ED;
+        background-color: $ciscoBlue;
+        h1{
+            color: $ciscoBlue;
+            color: $g;
+        }
+        input{
+
+        }
+
+    }
+
+    .deviceInfo{
+        @include flexCenter( column );
+        height: auto;
+        width: 90%;
+        padding: 16px;
+        label{
+            width: 200px;
+            text-align: left;
+            margin-top: 16px;
+            color: $ciscoBlue;
+            height: 20px;
+            font-size: 12px;
+        }
+        input{
+            height: 40px;
+        }
+        button{
+            margin-top: 16px;
+            height: 40px;
+            width: 200px;
+            cursor: pointer;
+        }
+    }
+}
